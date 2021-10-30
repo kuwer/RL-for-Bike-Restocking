@@ -1,32 +1,20 @@
-# RL-for-Bike-Restocking
-
-This README includes the following high level information:
-- Project Overview
-- Solution Design
+- ### Reinforcement Learning Model for Rebalancing Bikes stocks
 
 ---
 
+### Overview
 
 Bikes accumulate or deplete quickly at certain popular locations. Companies, such as CitiBike, spend lots of effort and money to manage bike stock at each station to ensure availability to riders throughout the day. Re-balancing is currently monitored and orchestrated by human based on conversation with citiBike frontline operators.
 
-### What should the intelligent solution be able to do?
-We want the solution to be able to do the following: 
-- learn without explicit human instruction and intervention
-- continuous improvement over time
-- capture and adjust to complex and changing system dynamics
 
+### What is Reinforcement Learning?
+Reinforcement Learning (RL) program is the "brain" in Google's AlphaGo, Telsa's self-driving car, robots made by Boston Dynamics, and some automatic trading algorithms at Hedge Funds. It is the technique, and some said it is the true AI, that enables autonomous machines. There are various applications beyond the ones we mentioned. Large scale operations with complex constraints and changing conditions, such as Smart City operation and multi-channel digital marketing, are the ideal condidates. There are lots of untapped potentials to gain productivity and new human-manchine interaction in these domains.
 
-### What is Reinforcement Learning and its applications?
-Reinforcement Learning (RL) is designed to let computors learn through reward and punishment, which is similar to how human learn. Some considered RL is the closest to real Artificial Intelligence.
+### How is bike balancing being done now?
+Bikes accumulate or deplete quickly at certain popular locations. Companies, such as CitiBike, spend lots of effort and money to manage bike stock at each station to ensure availability to riders throughout the day. Re-balancing is currently monitored and orchestrated by human based on conversation with citiBike frontline operators.
 
-RL has been applied to many use cases, such as: 
-- Google's Alpha Go and energy saving solution at its data centers
-- Tesla's self-driving car
-- Boston Dynamics' Robots
-- algorithmic traders at hedge funds
-- personalized marketing at Jing Dong (the largest e-Commerce platform in China)
-
-There are various applications beyond the ones we mentioned. Large scale operations with complex constraints and changing conditions, such as Smart City operation and multi-channel digital marketing, are the ideal condidates. There are lots of untapped potentials to gain productivity and new human-manchine interaction in these domains.
+### How do we envision bike balancing can be done?
+We aim to develop a computer agent that is able to understand 1) what the bike stock limit is and 2) decide how many bikes to move to where without hard coding any rules. The only thing we specify is the reward, which the agent will receive if it manages to keep the number of bikes to be less than 50 at the end of each day (23:00). The agent will also receive penalty based on the number of bikes it moves and if the number of bikes exceed 50.
 
 ### What will be the impact of our work?
 Hopefully the agent can be more precise, timely, and optimized than human agents. If we are successful, doing this may be one step closer to creating an "operational brain" for smart cities. Also, doing this is an attempt to apply Reinforcement Learning in large scale operational and public sector context, which is beyond games and finance.
@@ -44,7 +32,7 @@ We measure if the computer agent can achieve the following without deliberate hu
 - Can parallel learning (Asynchronous Advantaged Actor-Critic)  improve the speed and accuracy of operations in new dynamics?
 
 ---
-### Design and Results
+### Preliminary
 
 **Terminology**
 - **Agent**: Reinforcement Learning object acting as a "bike re-balancing operator"
@@ -69,3 +57,5 @@ We measure if the computer agent can achieve the following without deliberate hu
     - -10 if the bike stock is more than 50 at any given hour
     - -0.1 * number of bike removed at each hour
     - -20 if bike stock becomes negative at any given hour
+
+
