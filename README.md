@@ -3,17 +3,21 @@
 ---
 
 ### Overview
+![image](/Problem.png)
 
 Bikes accumulate or deplete quickly at certain popular locations. Companies, such as CitiBike, spend lots of effort and money to manage bike stock at each station to ensure availability to riders throughout the day. Re-balancing is currently monitored and orchestrated by human based on conversation with citiBike frontline operators.
 
 
 ### What is Reinforcement Learning?
+![image](/RL.png)
+
 Reinforcement Learning (RL) program is the "brain" in Google's AlphaGo, Telsa's self-driving car, robots made by Boston Dynamics, and some automatic trading algorithms at Hedge Funds. It is the technique, and some said it is the true AI, that enables autonomous machines. There are various applications beyond the ones we mentioned. Large scale operations with complex constraints and changing conditions, such as Smart City operation and multi-channel digital marketing, are the ideal condidates. There are lots of untapped potentials to gain productivity and new human-manchine interaction in these domains.
 
 ### How is bike balancing being done now?
 Bikes accumulate or deplete quickly at certain popular locations. Companies, such as CitiBike, spend lots of effort and money to manage bike stock at each station to ensure availability to riders throughout the day. Re-balancing is currently monitored and orchestrated by human based on conversation with citiBike frontline operators.
 
 ### How do we envision bike balancing can be done?
+![image](/Approach.png)
 We aim to develop a computer agent that is able to understand 1) what the bike stock limit is and 2) decide how many bikes to move to where without hard coding any rules. The only thing we specify is the reward, which the agent will receive if it manages to keep the number of bikes to be less than 50 at the end of each day (23:00). The agent will also receive penalty based on the number of bikes it moves and if the number of bikes exceed 50.
 
 ### What will be the impact of our work?
@@ -24,12 +28,6 @@ We measure if the computer agent can achieve the following without deliberate hu
 1) **High Success Ratio**: % of times it learns to limit bike stock equal or less than 50 by each day 23:00
 2) **Low Cost**: Total cost the agent used to balance bike stocks; the agent will receive a penalty of -0.1 * (number of bikes moved)
 3) **Short Learning Time**: the agent should be able to develop new rebalancing strategy quickly when external objectives change (e.g. bike stock limit, fluctuating  daily traffic flow, allowed actions)
-
-### What are the key thesis to investigate in near term?
-- Can Deep Learning (e.g. RNN) and time series forecasting or simulation techniques improve the performance KPIs (e.g. increase success ratio, lower cost, and shorten learning time)?
-- Can the agent balance multiple stations (e.g. 5 stations with inter-connected traffic flow) at the same time?
-- Can the agent develop its own action space, which is specified by human programmer at the moment?
-- Can parallel learning (Asynchronous Advantaged Actor-Critic)  improve the speed and accuracy of operations in new dynamics?
 
 ---
 ### Preliminary
